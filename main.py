@@ -4,9 +4,18 @@ from datetime import datetime
 from util import base64_to_pil
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
+import json
+
+with open('config.json','r') as c:
+    params = json.load(c)["params"]
+
+local_server = "True"
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/stop marine pollution.db'
+if local_server:
+    app.config['SQLALCHEMY_DATABASE_URI'] = params["local_uri"]
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = params["prod_uri"]
 db = SQLAlchemy(app)
 
 
