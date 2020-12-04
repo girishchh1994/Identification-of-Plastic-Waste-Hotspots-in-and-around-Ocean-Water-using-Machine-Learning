@@ -73,7 +73,7 @@ def predict():
         img = base64_to_pil(request.json)
         print("Inside Predict")
         # Save the image to ./uploads
-        img.save("./var/www/FlaskApp/FlaskApp/image.png")
+        img.save("/var/www/FlaskApp/FlaskApp/image.png")
         img = img.resize((224, 224))
 
         # Make prediction
@@ -90,7 +90,7 @@ def predict():
 
         #preds = model.predict(x)
         #!!!!!!!!!!!!!!!!
-        image_data = tf.io.gfile.GFile("./var/www/FlaskApp/FlaskApp/image.png", 'rb').read()
+        image_data = tf.io.gfile.GFile("/var/www/FlaskApp/FlaskApp/image.png", 'rb').read()
         label_lines = [line.rstrip() for line
                            in tf.io.gfile.GFile("tf_files/retrained_labels.txt")]
 
