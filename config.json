@@ -2,8 +2,8 @@
   "params":
   {
     "local_server": "True",
-    "local_uri": "mysql://root:@localhost/stop marine pollution.db",
-    "prod_uri": "mysql://root:@localhost/stop marine pollution.db"
+    "local_uri": "mysql://root:@localhost/stop marine pollution",
+    "prod_uri": "mysql://root:@localhost/stop marine pollution"
   }
 
 
