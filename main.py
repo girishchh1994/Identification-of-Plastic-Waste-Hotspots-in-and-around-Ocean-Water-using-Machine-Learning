@@ -23,7 +23,7 @@ class Contact(db.Model):
     S_No = db.Column(db.Integer, primary_key=True)
     Name = db.Column(db.String(80), unique=False, nullable=False)
     Date = db.Column(db.String(12), unique=False, nullable=True)
-    Email = db.Column(db.String(20), unique=False, nullable=False)
+    Email = db.Column(db.String(35), unique=False, nullable=False)
     Phone = db.Column(db.String(12), unique=False, nullable=False)
     Message = db.Column(db.String(120), unique=False, nullable=False)
 
