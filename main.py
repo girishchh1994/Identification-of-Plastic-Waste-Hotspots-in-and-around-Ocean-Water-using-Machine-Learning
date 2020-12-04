@@ -71,7 +71,7 @@ def predict():
     if request.method == 'POST':
         # Get the image from post request
         img = base64_to_pil(request.json)
-
+        print("Inside Predict")
         # Save the image to ./uploads
         img.save("./static/img/image.png")
 
@@ -132,4 +132,4 @@ def predict():
 
     return None
 
-app.run(debug=True)  # Debug= True will give you latest output without running code again and again
+app.run(host = '0.0.0.0', port = 5000, debug=True)  # Debug= True will give you latest output without running code again and again
